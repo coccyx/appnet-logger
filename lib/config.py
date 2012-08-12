@@ -21,7 +21,7 @@ class Config:
 
     sleep_time = None
 
-    parent_dir = None
+    grandparent_dir = None
 
     def __init__(self):
         # Rebind the internal datastore of the class to an Instance variable

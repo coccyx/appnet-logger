@@ -34,7 +34,9 @@ while True:
             page = response.read()
             results = json.loads(page)
             gotresults = True
-        except urllib2.HTTPError:
+        except urllib2.HTTPError, e:
+            logger.error("Got HTTPError: %s. Sleeping %s seconds" % (e, c.sleep_time)
+            time.sleep(c.sleep_time)
             pass
 
     i = 0
