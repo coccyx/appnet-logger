@@ -1,0 +1,13 @@
+[log]
+max_bytes = 10485760
+backup_files = 5
+file_name = /tmp/appnet.log
+
+[appnet]
+access_token = <token>
+global_stream_url = https://alpha-api.app.net/stream/0/posts/stream/global
+min_id = 27256
+
+[global]
+sleep_time = 5.0
+
