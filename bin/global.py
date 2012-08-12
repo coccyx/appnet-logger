@@ -27,9 +27,15 @@ while True:
     url = url + '?' + urllib.urlencode(query_string)
     headers = { 'Authorization': 'Bearer '+c.access_token }
     req = urllib2.Request(url, None, headers)
-    response = urllib2.urlopen(req)
-    page = response.read()
-    results = json.loads(page)
+    gotresults = False
+    while not gotresults:
+        try:
+            response = urllib2.urlopen(req)
+            page = response.read()
+            results = json.loads(page)
+            gotresults = True
+        except urllib2.HTTPError:
+            pass
 
     i = 0
     for item in results:
